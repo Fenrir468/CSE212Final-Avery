@@ -49,8 +49,10 @@ def pop(self):
 - Return the final string after all such duplicate removals have been made. 
 
 ```python
+def removeDuplicates(S):
+        # Insert own code 
 # test
-S = "acbelbclbaclbacace"
+S = "thisisatest"
 ```
 ### Example Solution
 
@@ -65,6 +67,9 @@ def removeDuplicates(S):
     return "".join(list_1)
 
 # test 
-S = "acbelbclbaclbacace"
+S = "thisisatest"
 removeDuplicates(S)
+
+# output
+hae
 ```

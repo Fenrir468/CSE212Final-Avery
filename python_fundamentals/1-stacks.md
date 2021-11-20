@@ -1,5 +1,7 @@
 # Stacks
 
+![Stack Diagram](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.onlinetutorialspoint.com%2Fpython%2Fimplementing-stack-in-python.html&psig=AOvVaw17OF6g3GuSdaqz7QDnRmgy&ust=1637513013572000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKDtkMWxp_QCFQAAAAAdAAAAABAX)
+
 ## Introduction
 
 A stack is a linear data structure that stores items in a Last-In/First-Out (LIFO) or First-In/Last-Out (FILO) manner. In stack, a new element is added at one end and an element is removed from that end only. The insert and delete operations are often called push and pop.

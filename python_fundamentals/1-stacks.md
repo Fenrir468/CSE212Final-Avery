@@ -56,7 +56,7 @@ def removeDuplicates(S):
 # test
 S = "thisisatest"
 ```
-### Example Solution
+### Example Solution(stacks_solution)
 
 ```python
 def removeDuplicates(S):

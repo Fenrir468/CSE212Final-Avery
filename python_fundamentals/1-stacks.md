@@ -70,6 +70,5 @@ def removeDuplicates(S):
 S = "thisisatest"
 removeDuplicates(S)
 
-# output
-hae
+# output (hae)
 ```

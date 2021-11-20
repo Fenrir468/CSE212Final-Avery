@@ -14,4 +14,3 @@ removeDuplicates(S)
 
 # output (hae)
 ```
-

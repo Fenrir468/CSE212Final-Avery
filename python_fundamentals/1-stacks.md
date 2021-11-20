@@ -1,6 +1,6 @@
 # Stacks
 
-![Stack Diagram](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.onlinetutorialspoint.com%2Fpython%2Fimplementing-stack-in-python.html&psig=AOvVaw17OF6g3GuSdaqz7QDnRmgy&ust=1637513013572000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKDtkMWxp_QCFQAAAAAdAAAAABAX)
+![Stack Diagram](https://www.onlinetutorialspoint.com/wp-content/uploads/2020/12/Python-Stack-Datastruture-Implementation-1200x496.png)
 
 ## Introduction
 

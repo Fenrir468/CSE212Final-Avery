@@ -56,5 +56,5 @@ def removeDuplicates(S):
 # test
 S = "thisisatest"
 ```
-### [Example Solution](stacks_solution)
+### [Example Solution](stack_solution)
 

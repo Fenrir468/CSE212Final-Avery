@@ -43,3 +43,9 @@ def pop(self):
             print(str(e))
 ```
 ## Problem to Solve
+
+### Solution
+
+```python
+
+```

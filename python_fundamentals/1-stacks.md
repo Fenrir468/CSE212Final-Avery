@@ -8,6 +8,7 @@ A stack is a linear data structure that stores items in a Last-In/First-Out (LIF
 
 In Python, a stack can be represented using a list. To push an item to the back of the stack, the append function can be used on the list. To pop items from the back of the stack, the pop function can be used. The pop function will also delete it from the list. The size can be determined by using the len function on the list. The performance of the stack using a Python list is based on the performance of the dynamic array.
 
+
 Common Stack Operation | Description | Performance 
 ---------------------- | ----------- | ----------- 
 push(value) | Adds "value" to the back of the stack. | Performance of adding to the end of a dynamic array

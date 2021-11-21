@@ -6,6 +6,13 @@
 
 A stack is a linear data structure that stores items in a Last-In/First-Out (LIFO) or First-In/Last-Out (FILO) manner. In stack, a new element is added at one end and an element is removed from that end only. The insert and delete operations are often called push and pop.
 
+Common Stack Operation | Description | Performance 
+---------------------- | ----------- | ----------- 
+push(value) | Adds "value" to the back of the stack. | Performance of adding to the end of a dynamic array
+pop() | Removes and returns the item from the back of the stack. | Performance of removing from the end of a dynamic array
+size() | Return the size of the stack. | Performance of returning the size of the dynamic array
+empty() | Returns true if the length of the stack is zero. | Performance of checking the size of the dynamic array
+
 ## Push
 
 The operation to insert elements in a stack is called push. When we push on a stack, we put the element on the previous top element which means that the new element becomes the top element. This is what we mean when we use the push operation, we push elements onto a stack. We insert elements onto a stack and the last element to be pushed is the new top of the stack.

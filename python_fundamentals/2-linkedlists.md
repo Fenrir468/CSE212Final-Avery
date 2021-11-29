@@ -31,17 +31,146 @@ list1.headval.nextval = e2
 e2.nextval = e3
 
 ```
-## New Nodes
 
-A node is an object which has a data field and a pointer to another node in the linked list. A simple structure of a node can be shown in the following figure.
+## Inserting into a Linked List
 
-![Node Explanation](https://www.alphacodingskills.com/imgfiles/linked-list.PNG)
+Inserting element in the linked list involves reassigning the pointers from the existing nodes to the newly inserted node. Depending on whether the new data element is getting inserted at the beginning or at the middle or at the end of the linked list, we have the below scenarios.
 
-### Example
+### Inserting at the Beginning
 
+This involves pointing the next pointer of the new data node to the current head of the linked list. So the current head of the linked list becomes the second data element and the new node becomes the head of the linked list.
+
+Example
 ```python
+class Node:
+   def __init__(self, dataval=None):
+      self.dataval = dataval
+      self.nextval = None
 
+class SLinkedList:
+   def __init__(self):
+      self.headval = None
+# Print the linked list
+   def listprint(self):
+      printval = self.headval
+      while printval is not None:
+         print (printval.dataval)
+         printval = printval.nextval
+   def AtBegining(self,newdata):
+      NewNode = Node(newdata)
+
+# Update the new nodes next val to existing node
+   NewNode.nextval = self.headval
+   self.headval = NewNode
+
+list = SLinkedList()
+list.headval = Node("Mon")
+e2 = Node("Tue")
+e3 = Node("Wed")
+
+list.headval.nextval = e2
+e2.nextval = e3
+
+list.AtBegining("Sun")
+list.listprint()
 ```
+
+### Inserting at the End
+This involves pointing the next pointer of the the current last node of the linked list to the new data node. So the current last node of the linked list becomes the second last data node and the new node becomes the last node of the linked list.
+
+Example
+```python
+class Node:
+   def __init__(self, dataval=None):
+      self.dataval = dataval
+      self.nextval = None
+class SLinkedList:
+   def __init__(self):
+      self.headval = None
+# Function to add newnode
+   def AtEnd(self, newdata):
+      NewNode = Node(newdata)
+      if self.headval is None:
+         self.headval = NewNode
+         return
+      laste = self.headval
+      while(laste.nextval):
+         laste = laste.nextval
+      laste.nextval=NewNode
+# Print the linked list
+   def listprint(self):
+      printval = self.headval
+      while printval is not None:
+         print (printval.dataval)
+         printval = printval.nextval
+
+list = SLinkedList()
+list.headval = Node("Mon")
+e2 = Node("Tue")
+e3 = Node("Wed")
+
+list.headval.nextval = e2
+e2.nextval = e3
+
+list.AtEnd("Thu")
+
+list.listprint()
+```
+
+## Removing from a Linked List
+We can remove an existing node using the key for that node. In the below program we locate the previous node of the node which is to be deleted.Then, point the next pointer of this node to the next node of the node to be deleted.
+
+Example
+```python
+class Node:
+   def __init__(self, data=None):
+      self.data = data
+      self.next = None
+class SLinkedList:
+   def __init__(self):
+      self.head = None
+
+   def Atbegining(self, data_in):
+      NewNode = Node(data_in)
+      NewNode.next = self.head
+      self.head = NewNode
+
+# Function to remove node
+   def RemoveNode(self, Removekey):
+      HeadVal = self.head
+         
+      if (HeadVal is not None):
+         if (HeadVal.data == Removekey):
+            self.head = HeadVal.next
+            HeadVal = None
+            return
+      while (HeadVal is not None):
+         if HeadVal.data == Removekey:
+            break
+         prev = HeadVal
+         HeadVal = HeadVal.next
+
+      if (HeadVal == None):
+         return
+
+      prev.next = HeadVal.next
+         HeadVal = None
+
+   def LListprint(self):
+      printval = self.head
+      while (printval):
+         print(printval.data),
+         printval = printval.next
+
+llist = SLinkedList()
+llist.Atbegining("Mon")
+llist.Atbegining("Tue")
+llist.Atbegining("Wed")
+llist.Atbegining("Thu")
+llist.RemoveNode("Tue")
+llist.LListprint()
+```
+
 ## [Problem to Solve](linkedtree-solution.md)
 ```python
 class Node:

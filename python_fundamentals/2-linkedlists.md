@@ -57,6 +57,7 @@ class LinkedList:
     self.head = None
 
   #display the content of the list
+  def PrintList(self):
   #enter in personal code
 
 # test the code    

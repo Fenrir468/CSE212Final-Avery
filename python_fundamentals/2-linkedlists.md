@@ -44,7 +44,6 @@ A node is an object which has a data field and a pointer to another node in the 
 ```
 ## [Problem to Solve](linkedtree-solution.md)
 ```python
-# node structure
 class Node:
   #constructor to create a new node
   def __init__(self, data):
@@ -58,16 +57,7 @@ class LinkedList:
     self.head = None
 
   #display the content of the list
-  def PrintList(self):
-    temp = self.head
-    if(temp != None):
-      print("The list contains:", end=" ")
-      while (temp != None):
-        print(temp.data, end=" ")
-        temp = temp.next
-      print()
-    else:
-      print("The list is empty.")
+  #enter in personal code
 
 # test the code    
 # create an empty LinkedList                 

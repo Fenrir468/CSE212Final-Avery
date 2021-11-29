@@ -34,7 +34,9 @@ e2.nextval = e3
 ## New Nodes
 
 A node is an object which has a data field and a pointer to another node in the linked list. A simple structure of a node can be shown in the following figure.
+
 ![Node Explanation](https://www.pythonforbeginners.com/wp-content/uploads/Linked-List-in-Python3.png)
+
 ### Example
 
 ```python

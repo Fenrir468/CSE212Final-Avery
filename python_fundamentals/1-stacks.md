@@ -33,6 +33,32 @@ def push(self,data):
             self.top=temp
             self.stackSize=self.stackSize+1
 ```
+### Example 2
+```python
+class Stack:
+   def __init__(self):
+      self.stack = []
+
+   def add(self, dataval):
+# Use list append method to add element
+      if dataval not in self.stack:
+         self.stack.append(dataval)
+         return True
+      else:
+         return False
+# Use peek to look at the top of the stack
+   def peek(self):     
+	   return self.stack[-1]
+
+AStack = Stack()
+AStack.add("Mon")
+AStack.add("Tue")
+AStack.peek()
+print(AStack.peek())
+AStack.add("Wed")
+AStack.add("Thu")
+print(AStack.peek())
+```
 ## Pop
 
 There is another operation that we can perform on the stack, popping. Popping is when we take the top of the stack and put it down. This implies that when we remove an element from the stack, the stack follows the First-In, Last Out property. This means that the top element, the last to be inserted, is removed when we perform the pop operation.
@@ -54,6 +80,38 @@ def pop(self):
         except Exception as e:
             print(str(e))
 ```
+
+### Example 2
+
+```python
+class Stack:
+   def __init__(self):
+      self.stack = []
+
+   def add(self, dataval):
+# Use list append method to add element
+      if dataval not in self.stack:
+         self.stack.append(dataval)
+         return True
+      else:
+         return False
+        
+# Use list pop method to remove element
+   def remove(self):
+      if len(self.stack) <= 0:
+         return ("No element in the Stack")
+      else:
+         return self.stack.pop()
+
+AStack = Stack()
+AStack.add("Mon")
+AStack.add("Tue")
+AStack.add("Wed")
+AStack.add("Thu")
+print(AStack.remove())
+print(AStack.remove())
+```
+
 ## Problem to Solve
 
 - Given a string(S) of lowercase letters remove all duplicate letters.

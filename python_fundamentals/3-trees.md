@@ -5,6 +5,7 @@
 Common Binary Search Tree Operation | Description 
 A binary tree is a data structure in which every node or vertex has atmost two children. In Python, a binary tree can be represented in different ways with different data structures(dictionary, list) and class representation for a node.
 
+Common Binary Search Tree Operation | Description
 ---------------------- | -----------  
 insert(value) | Insert a value into the tree.
 remove(value) | Remove a value from the tree.
@@ -25,7 +26,7 @@ empty() | 	Returns true if the root node is empty. This can also be done by chec
 ```
 
 ## Binary Search Tree
-
+A binary search tree is a binary tree that follows rules for data that is put into the tree. Data is placed into the BST by comparing the data with the value in the parent node. If the data being added is less than the parent node, then it is put in the left subtree. If the data being added is greater than the parent node, then it is put in the right subtree. If duplicates are allowed than the duplicate can be put either to the left or to the right of the root. By using this process, the data is stored in the tree sorted.
 
 ### Example
 
@@ -34,7 +35,7 @@ empty() | 	Returns true if the root node is empty. This can also be done by chec
 ```
 
 ## Ballanced Binary Search Tree
-
+A balanced binary search tree is a BST such that the difference of height between any two subtrees is not dramatically different. The height of a tree can be found by counting the maximum number of nodes between root and the leaves. Since it is not reasonable to expect that the order of data will result in a balanced BST, numerous algorithms have been written to detect if a tree is unbalanced and to correct the unbalance. 
 
 ### Example
 

@@ -184,43 +184,43 @@ llist.RemoveNode("Tue")
 llist.LListprint()
 ```
 
+## Importance of a Linked List
+A linked list saves memory. It only allocates the memory required for values to be stored. In arrays, you have to set an array size before filling it with values, which can potentially waste memory. Linked list nodes can live anywhere in the memory.
+
 ## [Problem to Solve](linkedtree-solution.md)
+Write a Python program to access a specific item in a singly linked list using index value.
 ```python
 class Node:
-  #constructor to create a new node
-  def __init__(self, data):
-    self.data = data
-    self.next = None
+    # Singly linked node
+    def __init__(self, data=None):
+        self.data = data
+        self.next = None
+class singly_linked_list:
+    def __init__(self):
+        # Createe an empty list
+        self.tail = None
+        self.head = None
+        self.count = 0
+	
+    def append_item(self, data):
+        #Append items on the list
+        # Insert personal code
+    
+    def __getitem__(self, index):
+        # Insert personal code
 
-#class Linked List
-class LinkedList:
-  #constructor to create an empty LinkedList
-  def __init__(self):
-    self.head = None
+#Test
+items = singly_linked_list()
+items.append_item('PHP')
+items.append_item('Python')
+items.append_item('C#')
+items.append_item('C++')
+items.append_item('Java')
 
-  #display the content of the list
-  def PrintList(self):
-  #enter in personal code
-
-# test the code    
-# create an empty LinkedList                 
-MyList = LinkedList()
-
-#Add first node.
-first = Node(10)
-#linking with head node
-MyList.head = first
-
-#Add second node.
-second = Node(20)
-#linking with first node
-first.next = second
-
-#Add third node.
-third = Node(30)
-#linking with second node
-second.next = third
-
-#print the content of list 
-MyList.PrintList()
+print("Search using index:")
+print(items[0])
+print(items[1])
+print(items[4])
+print(items[5])
+print(items[10])
 ```

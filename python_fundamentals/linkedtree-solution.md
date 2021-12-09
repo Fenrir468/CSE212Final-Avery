@@ -1,49 +1,58 @@
+## Solution
 ```python
-# node structure
 class Node:
-  #constructor to create a new node
-  def __init__(self, data):
-    self.data = data
-    self.next = None
+    # Singly linked node
+    def __init__(self, data=None):
+        self.data = data
+        self.next = None
+class singly_linked_list:
+    def __init__(self):
+        # Createe an empty list
+        self.tail = None
+        self.head = None
+        self.count = 0
+	
+    def append_item(self, data):
+        #Append items on the list
+        node = Node(data)
+        if self.head:
+            self.head.next = node
+            self.head = node
+        else:
+            self.tail = node
+            self.head = node
+        self.count += 1
+    
+    def __getitem__(self, index):
+        if index > self.count - 1:
+            return "Index out of range"
+        current_val = self.tail
+        for n in range(index):
+            current_val = current_val.next
+        return current_val.data
 
-#class Linked List
-class LinkedList:
-  #constructor to create an empty LinkedList
-  def __init__(self):
-    self.head = None
 
-  #display the content of the list
-  def PrintList(self):
-    temp = self.head
-    if(temp != None):
-      print("The list contains:", end=" ")
-      while (temp != None):
-        print(temp.data, end=" ")
-        temp = temp.next
-      print()
-    else:
-      print("The list is empty.")
+items = singly_linked_list()
+items.append_item('PHP')
+items.append_item('Python')
+items.append_item('C#')
+items.append_item('C++')
+items.append_item('Java')
 
-# test the code    
-# create an empty LinkedList                 
-MyList = LinkedList()
-
-#Add first node.
-first = Node(10)
-#linking with head node
-MyList.head = first
-
-#Add second node.
-second = Node(20)
-#linking with first node
-first.next = second
-
-#Add third node.
-third = Node(30)
-#linking with second node
-second.next = third
-
-#print the content of list 
-MyList.PrintList()
+print("Search using index:")
+print(items[0])
+print(items[1])
+print(items[4])
+print(items[5])
+print(items[10])
 ```
 
+# Output
+```python
+Search using index:
+PHP
+Python
+Java
+Index out of range
+Index out of range
+```

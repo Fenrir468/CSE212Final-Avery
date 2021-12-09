@@ -4,6 +4,19 @@
 
 Linked list is a simple data structure in programming, which obviously is used to store data and retrieve it accordingly. To make it easier to imagine, it is more like a dynamic array in which data elements are linked via pointers rather than being tightly packed. 
 
+![Linked List](https://byui-cse.github.io/cse212-course/lesson07/linked_list.jpeg)
+
+Common Linked List Operation | Description
+---------------------- | -----------
+insert_head(value) | Adds "value" before the head
+insert_tail(value) | Adds "value" after the tail
+insert(i, value) | Adds "value" after node "i".
+remove_head() | Removes the first item (the head)
+remove_tail(index) | Removes the last item (the tail)
+remove(i) | 	Removes node "i".
+size() | Return the size of the linked list
+empty() | Returns true if the length of the linked list is zero.
+
 ## Creation of List
 
 A linked list is created by using the node class. We create a Node object and create another class to use this ode object. We pass the appropriate values through the node object to point the to the next data elements. The below program creates the linked list with three data elements. In the next section we will see how to traverse the linked list.

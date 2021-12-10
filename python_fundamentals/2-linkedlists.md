@@ -187,7 +187,7 @@ llist.LListprint()
 ## Importance of a Linked List
 A linked list saves memory. It only allocates the memory required for values to be stored. In arrays, you have to set an array size before filling it with values, which can potentially waste memory. Linked list nodes can live anywhere in the memory.
 
-## [Problem to Solve](linkedtree-solution.md)
+## Problem to Solve
 Write a Python program to access a specific item in a singly linked list using index value.
 ```python
 class Node:
@@ -224,3 +224,4 @@ print(items[4])
 print(items[5])
 print(items[10])
 ```
+## [Example Solution](linkedtree-solution.md)

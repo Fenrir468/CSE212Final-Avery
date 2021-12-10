@@ -61,7 +61,7 @@ The tree can be traversed by deciding on a sequence to visit each node. As we ca
 
 ```
 
-## [Problem to Solve](tree_solution.md)
+## Problem to Solve
 ```python
 class TreeNode(object):
     def __init__(self, x):
@@ -83,3 +83,4 @@ result = array_to_bst(array_nums)
 print("\nArray to a height balanced BST:")
 print(preOrder(result))
 ```
+## [Example Solution](tree_solution.md)

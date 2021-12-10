@@ -1,4 +1,4 @@
-# Linked List
+# Doubly Linked List
 
 ## Introduction
 
@@ -44,144 +44,106 @@ list1.headval.nextval = e2
 e2.nextval = e3
 
 ```
-
-## Inserting into a Linked List
-
-Inserting element in the linked list involves reassigning the pointers from the existing nodes to the newly inserted node. Depending on whether the new data element is getting inserted at the beginning or at the middle or at the end of the linked list, we have the below scenarios.
-
-### Inserting at the Beginning
-
-This involves pointing the next pointer of the new data node to the current head of the linked list. So the current head of the linked list becomes the second data element and the new node becomes the head of the linked list.
-
-Example
+## Implementation of Doubly Linked List
+We will implement doubly linked list using some concepts of object oriented programming in python. We will first create a class for creating a node in a basic linked list, with three attributes: the data, previous pointer and next pointer. The code looks like this:
 ```python
 class Node:
-   def __init__(self, dataval=None):
-      self.dataval = dataval
-      self.nextval = None
+    def __init__(self, data):
+        self.item = data
+        self.next = None
+        self.prev = None
+``` 
 
-class SLinkedList:
-   def __init__(self):
-      self.headval = None
-# Print the linked list
-   def listprint(self):
-      printval = self.headval
-      while printval is not None:
-         print (printval.dataval)
-         printval = printval.nextval
-   def AtBegining(self,newdata):
-      NewNode = Node(newdata)
+The item variable will store the actual element of the node. The next stores the address to the next node, while prev stores the address to the previous node in the doubly linked list.
 
-# Update the new nodes next val to existing node
-   NewNode.nextval = self.headval
-   self.headval = NewNode
-
-list = SLinkedList()
-list.headval = Node("Mon")
-e2 = Node("Tue")
-e3 = Node("Wed")
-
-list.headval.nextval = e2
-e2.nextval = e3
-
-list.AtBegining("Sun")
-list.listprint()
-```
-
-### Inserting at the End
-This involves pointing the next pointer of the the current last node of the linked list to the new data node. So the current last node of the linked list becomes the second last data node and the new node becomes the last node of the linked list.
-
-Example
+In the next step, we will create a doublyLinkedList class, that contains different functions to insert, delete and display elements of doubly linked list.
 ```python
-class Node:
-   def __init__(self, dataval=None):
-      self.dataval = dataval
-      self.nextval = None
-class SLinkedList:
-   def __init__(self):
-      self.headval = None
-# Function to add newnode
-   def AtEnd(self, newdata):
-      NewNode = Node(newdata)
-      if self.headval is None:
-         self.headval = NewNode
-         return
-      laste = self.headval
-      while(laste.nextval):
-         laste = laste.nextval
-      laste.nextval=NewNode
-# Print the linked list
-   def listprint(self):
-      printval = self.headval
-      while printval is not None:
-         print (printval.dataval)
-         printval = printval.nextval
-
-list = SLinkedList()
-list.headval = Node("Mon")
-e2 = Node("Tue")
-e3 = Node("Wed")
-
-list.headval.nextval = e2
-e2.nextval = e3
-
-list.AtEnd("Thu")
-
-list.listprint()
-```
-
-## Removing from a Linked List
-We can remove an existing node using the key for that node. In the below program we locate the previous node of the node which is to be deleted.Then, point the next pointer of this node to the next node of the node to be deleted.
-
-Example
+class doublyLinkedList:
+    def __init__(self):
+        self.start_node = None
+ ``` 
+The most permissive way to insert an element in a doubly linked list is to insert the element in the empty list. The following piece of code enters an element at the origin of the doubly linked list:
 ```python
-class Node:
-   def __init__(self, data=None):
-      self.data = data
-      self.next = None
-class SLinkedList:
-   def __init__(self):
-      self.head = None
+    def InsertToEmptyList(self, data):
+        if self.start_node is None:
+            new_node = Node(data)
+            self.start_node = new_node
+        else:
+            print("The list is empty")
+ ```
+## Inserting Items at the End
+Inserting an element at the end of the doubly linked list is slightly alike to inserting an element at the start of the list. Before entering the elements, we need to verify and check if the doubly linked list is empty. If the list is empty then we can easily use the function InsertToEmptyList() method to insert the element to the list. If the list already has added element, we iterate through the list till the address to the next node reaches NULL. When the next node address becomes NULL, it denotes that the current node is the last node.
 
-   def Atbegining(self, data_in):
-      NewNode = Node(data_in)
-      NewNode.next = self.head
-      self.head = NewNode
+The previous reference for the new node is set to the last node, and the next address for the last node is assigned to the newly inserted node. The function for inserting an item at the last node is as follows:
 
-# Function to remove node
-   def RemoveNode(self, Removekey):
-      HeadVal = self.head
-         
-      if (HeadVal is not None):
-         if (HeadVal.data == Removekey):
-            self.head = HeadVal.next
-            HeadVal = None
+```python
+    # Insert element at the end
+    def InsertToEnd(self, data):
+        # Check if the list is empty
+        if self.start_node is None:
+            new_node = Node(data)
+            self.start_node = new_node
             return
-      while (HeadVal is not None):
-         if HeadVal.data == Removekey:
-            break
-         prev = HeadVal
-         HeadVal = HeadVal.next
+        n = self.start_node
+        # Iterate till the next reaches NULL
+        while n.next is not None:
+            n = n.next
+        new_node = Node(data)
+        n.next = new_node
+        new_node.prev = n
+ ```
+ 
+## Deleting Elements from the Start
+The most natural way to delete an element from a doubly linked list is deleting from the start of the list. In order to achieve this, we will assign the value of the start node to the next node and then assign the previous address of the start node to NULL. But before doing this, we need to check two things. First, we need to check if the list is empty. And then we have to verify if the list has only one node or not. If the list has only one element then we can easily assign the start node to NULL. The following code can be utilised to delete node from the start of the doubly linked list.
 
-      if (HeadVal == None):
-         return
+ 
+```python
+    # Delete the elements from the start
+    def DeleteAtStart(self):
+        if self.start_node is None:
+            print("The Linked list is empty, no element to delete")
+            return 
+        if self.start_node.next is None:
+            self.start_node = None
+            return
+        self.start_node = self.start_node.next
+        self.start_prev = None;
+ ```
+ 
+## Deleting Elements from the End
+To remove the element from the end, we have to again verify if the list is empty or if the list has a single element. If the list has a single element, we will assign the start node to NULL. If the doubly linked list has more than one element, we traverse through the list until the last node reaches NULL. Once we reach the last node, we assign the next address of the node previous to the last node, to NULL which actually deletes the last node. The following function can be used to delete the element from the end of the list.
 
-      prev.next = HeadVal.next
-         HeadVal = None
+ 
+```python
+    # Delete the elements from the end
+    def delete_at_end(self):
+        # Check if the List is empty
+        if self.start_node is None:
+            print("The Linked list is empty, no element to delete")
+            return 
+        if self.start_node.next is None:
+            self.start_node = None
+            return
+        n = self.start_node
+        while n.next is not None:
+            n = n.next
+        n.prev.next = None
+ ```
+## Traversing the Linked List
+Display the elements in the doubly linked list, while iterating through each element.
 
-   def LListprint(self):
-      printval = self.head
-      while (printval):
-         print(printval.data),
-         printval = printval.next
-
-llist = SLinkedList()
-llist.Atbegining("Mon")
-llist.Atbegining("Tue")
-llist.Atbegining("Wed")
-llist.Atbegining("Thu")
-llist.RemoveNode("Tue")
-llist.LListprint()
+```python
+    # Traversing and Displaying each element of the list
+    def Display(self):
+        if self.start_node is None:
+            print("The list is empty")
+            return
+        else:
+            n = self.start_node
+            while n is not None:
+                print("Element is: ", n.item)
+                n = n.next
+        print("\n")
 ```
 
 ## Importance of a Linked List

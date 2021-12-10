@@ -1,3 +1,4 @@
+#### [Welcom](0-welcome.md)
 # Stacks
 
 ![Stack Diagram](https://www.onlinetutorialspoint.com/wp-content/uploads/2020/12/Python-Stack-Datastruture-Implementation-1200x496.png)
